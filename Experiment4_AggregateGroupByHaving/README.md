@@ -38,123 +38,203 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to find how many employees have an income greater than 50K?
+
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT COUNT(*) AS employees_count
+FROM employee
+WHERE income > 50000;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="541" height="328" alt="image" src="https://github.com/user-attachments/assets/ec030744-3cc4-46ab-a346-99b105a0ad48" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL query to find the youngest employee in the company?
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT 
+    name AS Employee_Name, 
+    age AS Age
+FROM 
+    employee
+ORDER BY 
+    age ASC
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="813" height="353" alt="image" src="https://github.com/user-attachments/assets/eada8c10-2c9a-4b27-b3c0-d01b44d98be2" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to find  how many employees work in California?
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT COUNT(*) AS employees_in_california
+FROM employee
+WHERE city = 'California';
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="683" height="326" alt="image" src="https://github.com/user-attachments/assets/9115cb24-afc4-4744-b22e-077675a75c7b" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+How many prescriptions were written in each frequency category (e.g., once daily, twice daily)?
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT 
+    frequency AS Frequency, 
+    COUNT(*) AS TotalPrescriptions
+FROM 
+    Prescriptions
+GROUP BY 
+    frequency
+ORDER BY 
+    frequency ASC;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="986" height="598" alt="image" src="https://github.com/user-attachments/assets/627f726b-ff63-4352-bacf-7b42aa7fcb88" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+What is the total number of medications prescribed for each patient?
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT 
+    PatientID, 
+    COUNT(*) AS TotalMedications
+FROM 
+    Prescriptions
+GROUP BY 
+    PatientID
+ORDER BY 
+    PatientID ASC;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="850" height="760" alt="image" src="https://github.com/user-attachments/assets/2d02a242-4e83-487d-a8f3-84e231d3e02e" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+What is the total number of appointments scheduled by each doctor?
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT 
+    DoctorID, 
+    COUNT(*) AS TotalAppointments
+FROM 
+    Appointments
+GROUP BY 
+    DoctorID
+ORDER BY 
+    DoctorID ASC;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="959" height="681" alt="image" src="https://github.com/user-attachments/assets/946f56d0-c206-4d69-a0a0-4354b75c44e7" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write the SQL query that accomplishes the selection of average price for each category from the "products" table and includes only those products where the average price falls between 10 and 15.
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT 
+    category_id, 
+    AVG(Price)
+FROM 
+    products
+GROUP BY 
+    category_id
+HAVING 
+    AVG(Price) BETWEEN 10 AND 15;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="721" height="455" alt="image" src="https://github.com/user-attachments/assets/ea19a7ed-f593-4106-bb15-070f71bf0146" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write the SQL query that achieves the grouping of data by occupation, calculates the total work hours for each occupation, and excludes occupations where the total work hour sum is not greater than 20.
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT 
+    occupation, 
+    SUM(workhour)
+FROM 
+    employee1
+GROUP BY 
+    occupation
+HAVING 
+    SUM(workhour) > 20;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="687" height="512" alt="image" src="https://github.com/user-attachments/assets/6f26c732-9c86-47c3-aa99-3281ef41b3a4" />
+
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write the SQL query that achieves the grouping of data by occupation, calculates the minimum work hours for each occupation, and excludes occupations where the minimum work hour is not greater than 8.
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT 
+    occupation, 
+    MIN(workhour)
+FROM 
+    employee1
+GROUP BY 
+    occupation
+HAVING 
+    MIN(workhour) > 8;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="678" height="529" alt="image" src="https://github.com/user-attachments/assets/b02071a8-549d-4671-8762-22e3147fec98" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write the SQL query to find how many patients have more than 3 medical records?.
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT 
+    PatientID, 
+    COUNT(*) AS TotalRecords
+FROM 
+    MedicalRecords
+GROUP BY 
+    PatientID
+HAVING 
+    COUNT(*) > 3;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="803" height="486" alt="image" src="https://github.com/user-attachments/assets/e35c2855-53b0-48bf-94b8-8129262436b1" />
+
 
 
 ## RESULT
