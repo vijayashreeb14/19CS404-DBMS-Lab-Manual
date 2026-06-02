@@ -105,123 +105,190 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a table named Products with the following columns:
+
+ProductID as INTEGER
+ProductName as TEXT
+Price as REAL
+Stock as INTEGER
 
 ```sql
--- Paste your SQL code below for Question 1
+create table products(
+ProductID INTEGER,
+ProductName TEXT,
+Price REAL,
+Stock INTEGER
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1205" height="366" alt="image" src="https://github.com/user-attachments/assets/2b81155b-8d8b-4bbd-a173-7aa3d5cf780e" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write an SQL Query to add the attributes designation, net_salary, and dob to the Companies table with the following data types:
+designation as VARCHAR(50)
+net_salary as NUMBER
+dob as DATE
 
 ```sql
--- Paste your SQL code below for Question 2
+alter table Companies add column designation varchar(50);
+alter table Companies add column net_salary number;
+alter table Companies add column dob date;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1185" height="401" alt="image" src="https://github.com/user-attachments/assets/49adaff9-75eb-4d96-aa91-5032c1075970" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Create a table named Locations with the following columns:
+
+LocationID as INTEGER
+LocationName as TEXT
+Address as TEXT
 
 ```sql
--- Paste your SQL code below for Question 3
+create table Locations(
+LocationID INTEGER,
+LocationName TEXT,
+Address TEXT
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1179" height="369" alt="image" src="https://github.com/user-attachments/assets/f2df3e1f-733a-468d-9957-1c90a9956551" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
 
 ```sql
--- Paste your SQL code below for Question 4
+create table Orders(
+OrderID INTEGER primary key,
+OrderDate DATE not null,
+CustomerID INTEGER,
+foreign key (CustomerID) references Customers(CustomerID)
+);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1188" height="272" alt="image" src="https://github.com/user-attachments/assets/f008ade9-1208-4c77-b4a8-a2a040887cab" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Create a table named Events with the following columns:
+
+EventID as INTEGER
+EventName as TEXT
+EventDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 5
+create table Events(
+EventID INTEGER,
+EventName TEXT,
+EventDate DATE
+);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1192" height="366" alt="image" src="https://github.com/user-attachments/assets/7a1111b9-6cf8-40fb-b1fb-52fa44573f0c" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Create a table named Orders with the following columns:
+
+OrderID as INTEGER
+OrderDate as TEXT
+CustomerID as INTEGER
 
 ```sql
--- Paste your SQL code below for Question 6
+create table Orders(
+OrderID INTEGER,
+OrderDate TEXT,
+CustomerID INTEGER
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1179" height="363" alt="image" src="https://github.com/user-attachments/assets/792261df-8899-4dd2-b50d-882bd99467f1" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Insert the following products into the Products table:
 
 ```sql
--- Paste your SQL code below for Question 7
+insert into Products (Name,Category,Price,Stock)
+ values
+ ('Smartphone','Electronics',800,150),
+ ('Headphones','Accessories',200,300);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1190" height="342" alt="image" src="https://github.com/user-attachments/assets/7bb6aa63-a135-4f8f-8fda-d5ee8ef433f3" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
 
 ```sql
--- Paste your SQL code below for Question 8
+insert into Student_details (RollNo,Name,Gender,Subject,Marks)
+values 
+(201,'David Lee','M','Physics',92);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1186" height="234" alt="image" src="https://github.com/user-attachments/assets/748ddc56-978d-4b9b-88cd-1bc11998d1ba" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to modify the Student_details table by adding a new column Email of type VARCHAR(50) and updating the column MARKS to have a default value of 0.
 
 ```sql
--- Paste your SQL code below for Question 9
+
+ALTER table Student_details add Email varchar(50);
+alter table Student_details 
+add column MARKS integer default 0;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1180" height="231" alt="image" src="https://github.com/user-attachments/assets/428cbeda-3bb3-47c1-9063-3156ed1dd224" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Insert all students from Archived_students table into the Student_details table.
 
 ```sql
--- Paste your SQL code below for Question 10
+insert into Student_details(RollNo,Name,Gender,Subject,Marks)
+select RollNo,Name,Gender,Subject,Marks
+from Archived_students;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1181" height="276" alt="image" src="https://github.com/user-attachments/assets/fb8987d6-e47c-40fe-9a18-bfd3a12fa01f" />
+
 
 
 ## RESULT
