@@ -47,123 +47,148 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to calculate the absolute value of the value1 column from the Calculations table.
 
 ```sql
--- Paste your SQL code below for Question 1
+select id,value1, ABS (value1)  as  absolute_value from Calculations;
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="893" height="318" alt="image" src="https://github.com/user-attachments/assets/771fc185-cb21-427a-bf58-47ede2e76632" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL query to find the exact date that is 100 days after each employee's hire date.
 
 ```sql
--- Paste your SQL code below for Question 2
+select ename ,hiredate,DATE(hiredate,'+100 days') as  DateAfter100Days from emp;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="868" height="357" alt="image" src="https://github.com/user-attachments/assets/98449ae3-7301-4e17-9b03-82aa04b0a056" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
-
+Write a SQL query to select orders between 500 and 4000 (begin and end values are included). Exclude orders amount 948.50 and 1983.43. Return ord_no, purch_amt, ord_date, customer_id, and salesman_id.
 ```sql
--- Paste your SQL code below for Question 3
+SELECT ord_no, purch_amt, ord_date, customer_id, salesman_id
+FROM orders
+WHERE purch_amt BETWEEN 500 AND 4000
+AND purch_amt NOT IN (948.50, 1983.43);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1185" height="398" alt="image" src="https://github.com/user-attachments/assets/a53dd73b-8566-4e10-99e7-e129ee140dab" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+ Write a query to fetch 3 top salaried records from EmployeePosition table.
 
 ```sql
--- Paste your SQL code below for Question 4
+select EmpID , EmpPosition,DateOfJoining,Salary from EmployeePosition order by Salary desc limit 3;
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1188" height="344" alt="image" src="https://github.com/user-attachments/assets/5d0728dd-3ae9-4ba6-8118-2cead346f850" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to retrieve the year, month, and day from the hiredate column in the emp table.
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT 
+    strftime('%Y', hiredate) AS Year,
+    strftime('%m', hiredate) AS Month,
+    strftime('%d', hiredate) AS Day
+FROM emp;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="862" height="386" alt="image" src="https://github.com/user-attachments/assets/ee8f4241-95f7-46dc-9bd6-d83a3e1632a8" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
-
+Write a SQL query to Delete a Specific Surgery whose ID is 3 or surgeon ID is 4.
 ```sql
--- Paste your SQL code below for Question 6
+delete from Surgeries where surgeon_id=3
+ or surgeon_id =4;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1177" height="840" alt="image" src="https://github.com/user-attachments/assets/873b9447-00ad-4a48-8b55-5302e324ef2a" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Change the supplier name to upper case where contact person contains ' Singh' in suppliers table.
 
 ```sql
--- Paste your SQL code below for Question 7
+UPDATE suppliers
+SET supplier_name = UPPER(supplier_name)
+WHERE contact_person LIKE '% Singh%';
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1194" height="356" alt="image" src="https://github.com/user-attachments/assets/29ff1e00-f7f8-466f-9f91-9f2db6301f52" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to calculate the final price after applying both the discount and the tax. Return product_id, original_price, discount_percentage, tax_rate, and final_price.
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT 
+    product_id,
+    original_price,
+    discount_percentage,
+    tax_rate,
+    original_price * (1 - discount_percentage) * (1 + tax_rate) AS final_price
+FROM Products;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1221" height="357" alt="image" src="https://github.com/user-attachments/assets/d4f17293-f847-4c75-93fd-e69d852ae53c" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
-
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is exactly 2.
 ```sql
--- Paste your SQL code below for Question 9
+delete from Customer where GRADE =2;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="856" height="582" alt="image" src="https://github.com/user-attachments/assets/30ecf107-b369-415a-98b3-a9f4305bff66" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is not equal to 3.
 
 ```sql
--- Paste your SQL code below for Question 10
+delete from Customer where GRADE !=3;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="771" height="495" alt="image" src="https://github.com/user-attachments/assets/b3bffa03-2350-443c-91e0-e512ecc25b52" />
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
